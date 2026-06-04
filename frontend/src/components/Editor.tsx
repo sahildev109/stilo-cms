@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import { BlockNoteEditor, Block } from '@blocknote/core';
-// 🚨 CHANGE: Import BlockNoteView from @blocknote/mantine instead of @blocknote/react
+
 import { BlockNoteView } from '@blocknote/mantine';
 import { useBlockNote, useEditorContentOrSelectionChange } from '@blocknote/react';
 
-// 🚨 CHANGE: Import the mantine styling structure sheet instead
 import '@blocknote/mantine/style.css';
 
 interface EditorProps {
@@ -15,7 +14,7 @@ interface EditorProps {
 
 export const Editor: React.FC<EditorProps> = ({ initialContent, onChange, readOnly }) => {
   
-  // Keep your great data-sanitization work!
+
   const safeContent = useMemo(() => {
     if (!initialContent) return undefined;
     return initialContent.map(block => {
@@ -69,7 +68,6 @@ export const Editor: React.FC<EditorProps> = ({ initialContent, onChange, readOn
     );
   }
 
-  // 🚨 DEFAULT VIEW: For your creation/admin page, use the native Mantine view wrapper.
-  // It natively includes the slash menu and toolbars perfectly out-of-the-box!
+ 
   return <BlockNoteView editor={editor} theme='light' />;
 };
