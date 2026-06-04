@@ -1,4 +1,4 @@
-# CMS Assignment
+# Stilo - CMS [ [Live](https://stilo-cms.vercel.app/) ]
 
 Full-stack CMS with post versioning, visual diff, and full-text search.
 
