@@ -18,7 +18,7 @@ The diff runs entirely on the frontend. Both version payloads are already fetche
 
 ## 5. Deployment and trickiest part
 
-I deployed the backend and PostgreSQL on Railway, and the frontend on Vercel. The trickiest part was ensuring the `tsvector` trigger ran correctly on Railway's managed Postgres - the trigger function references `post_versions`, so the migration order mattered strictly (`post_versions` had to exist before the trigger was created). The second challenge was CORS: Railway provides a non-deterministic subdomain on first deploy, so I used a Railway environment variable reference in the `CORS_ORIGIN` setting and redeployed the backend after the Vercel URL was known.
+I deployed the backend on Render and PostgreSQL on Neon and the frontend on Vercel. The trickiest part was ensuring the `tsvector` trigger ran correctly on Neon's managed Postgres - the trigger function references `post_versions`, so the migration order mattered strictly (`post_versions` had to exist before the trigger was created).
 
 ## 6. One thing I would do differently
 
